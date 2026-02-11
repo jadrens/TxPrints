@@ -187,6 +187,10 @@ def run_file_manager(action):
 
 
 if __name__ == "__main__":
+    necessary_folders = ["input", "output", "cache"]
+    for folder in necessary_folders:
+        if not os.path.exists(folder):
+            os.makedirs(folder)
     custom_function = parse_command_line_args()
     if custom_function is not None:
         try:
